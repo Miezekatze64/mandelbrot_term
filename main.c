@@ -7,10 +7,6 @@
 #include <errno.h>
 #include <assert.h>
 
-#include <termios.h>
-#include <unistd.h>
-#include <sys/ioctl.h>
-
 #if defined(_WIN32) || defined(_WIN64) || defined(__MINGW32__) || defined(__CYGWIN__)
 #error This program currently does NOT support windows! \
     if you are thinking otherwise, please delete this line or add `undef(_WIN32)`..
@@ -19,6 +15,10 @@ int main() {}
 #ifndef __linux__
 #warning this program is not tested for your operating systems, some bugs might occur...
 #endif //__linux__
+
+#include <termios.h>
+#include <unistd.h>
+#include <sys/ioctl.h>
 
 #define die(str) \
     do {                                                                \
