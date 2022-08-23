@@ -121,6 +121,7 @@ void render(double x_off, double y_off, int scale, bool force, const bool ship, 
         force = true;
         if (((lw < width) || (lh < height)) && buf != NULL) {
             buf = realloc(buf, width*height * sizeof(char) * 21);
+            // TODO(#1): re-position offset after resize (currently jumps around)
         }
     }
     lw = width;
