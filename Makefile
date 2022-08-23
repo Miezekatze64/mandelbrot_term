@@ -4,9 +4,9 @@ NAME=main
 OUTFILE=mandelbrot
 CC=gcc
 
-all: ${NAME}
+all: ${OUTFILE}
 
-${NAME}: ${NAME}.c
+${OUTFILE}: ${NAME}.c
 	${CC} ${NAME}.c -o ${OUTFILE} ${CFLAGS} ${LDFLAGS}
 
 run: ${OUTFILE}
